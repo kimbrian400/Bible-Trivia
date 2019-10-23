@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 doubleBackToExitPressedOnce = false;
             }
-        }, 4000);
+        }, 10000);
 
     }
 

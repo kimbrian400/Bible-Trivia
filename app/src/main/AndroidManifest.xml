@@ -11,9 +11,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AboutUs"></activity>
-        <activity android:name=".Setting_activity" />
-        <activity android:name=".ScoreCard" />
+
+        <activity
+            android:name=".AboutUs"
+            android:label="@string/title_activity_about_us"
+            android:parentActivityName=".Navigation_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.kimbrian.bibiletrivia.Navigation_Activity" />
+        </activity>
+
+        <activity android:name=".Setting_activity"
+            android:label="@string/title_activity_setting_activity"
+            android:parentActivityName=".Navigation_Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kimbrian.bibiletrivia.Navigation_Activity" />
+        </activity>
+
+        <activity android:name=".ScoreCard"
+            android:label="High Score"
+            android:parentActivityName=".Navigation_Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kimbrian.bibiletrivia.Navigation_Activity" />
+        </activity>
 
         <activity android:name=".Navigation_Activity"
             android:label="@string/app_name"
