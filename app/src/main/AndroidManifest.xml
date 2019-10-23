@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.kimbrian.bibiletrivia">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,18 +14,20 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
+        <activity android:name=".Result"></activity>
+
         <activity
             android:name=".AboutUs"
             android:label="@string/title_activity_about_us"
             android:parentActivityName=".Navigation_Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.kimbrian.bibiletrivia.Navigation_Activity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kimbrian.bibiletrivia.Navigation_Activity" />
         </activity>
-
-        <activity android:name=".Setting_activity"
+        <activity
+            android:name=".Setting_activity"
             android:label="@string/title_activity_setting_activity"
             android:parentActivityName=".Navigation_Activity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -31,8 +35,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kimbrian.bibiletrivia.Navigation_Activity" />
         </activity>
-
-        <activity android:name=".ScoreCard"
+        <activity
+            android:name=".ScoreCard"
             android:label="High Score"
             android:parentActivityName=".Navigation_Activity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -40,16 +44,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kimbrian.bibiletrivia.Navigation_Activity" />
         </activity>
-
-        <activity android:name=".Navigation_Activity"
+        <activity
+            android:name=".Navigation_Activity"
             android:label="@string/app_name"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.kimbrian.bibiletrivia.MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kimbrian.bibiletrivia.MainActivity" />
         </activity>
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
