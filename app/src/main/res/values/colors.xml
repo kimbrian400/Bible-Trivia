@@ -38,4 +38,6 @@
     <!-- Color Opacity -->
     <color name="colorOpacityGray">#EBEBEB</color>
     <color name="colorOpacityBlack">#CC000000</color>
+
+    <color name="colorButtonNormal">#009688</color>
 </resources>
