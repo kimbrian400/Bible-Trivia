@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Bible Trivia</string>
+    <string name="toast_message">"1.   Enter your name for the quiz.
+
+ 2.   Enter your valid mail address.
+        eg:   abc@xyz.com
+
+ 3.   Now set your password for
+        security purpose.
+
+              Enjoy the app! ☺</string>
+
+</resources>
