@@ -89,12 +89,13 @@ public class Navigation_Activity extends AppCompatActivity
 
 
                 progressBar = new ProgressDialog(v.getContext());//Create new object of progress bar type
-                progressBar.setCancelable(false);//Progress bar cannot be cancelled by pressing any wher on screen
+                progressBar.setCancelable(false);//Progress bar cannot be cancelled by pressing anywhere on screen
                 progressBar.setMessage("Getting Questions Ready ...");//Title shown in the progress bar
                 progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);//Style of the progress bar
                 progressBar.setProgress(0);//attributes
                 progressBar.setMax(100);//attributes
                 progressBar.show();//show the progress bar
+
                 //This handler will add a delay of 3 seconds
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -350,7 +351,7 @@ public class Navigation_Activity extends AppCompatActivity
                 new Handler().postDelayed(new Runnable() {@Override public void run(){}}, 400);
 
                 progressBar = new ProgressDialog(v.getContext());//Create new object of progress bar type
-                progressBar.setCancelable(false);//Progress bar cannot be cancelled by pressing any wher on screen
+                progressBar.setCancelable(false);//Progress bar cannot be cancelled by pressing anywhere on screen
                 progressBar.setMessage("Getting Questions Ready ...");//Title shown in the progress bar
                 progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);//Style of the progress bar
                 progressBar.setProgress(0);//attributes
@@ -401,7 +402,7 @@ public class Navigation_Activity extends AppCompatActivity
             Intent intent = new Intent(android.content.Intent.ACTION_SEND);
             intent.setData(Uri.parse("mailto:"));
             intent.setType("message/rfc822");
-            intent.putExtra(Intent.EXTRA_SUBJECT, "QuizBook");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Trivia");
             System.out.println(""+R.string.email_content);
             intent.putExtra(Intent.EXTRA_TEXT, ""+getText(R.string.email_content)+getText(R.string.link)+getText(R.string.last_content));
             Intent chooser = Intent.createChooser(intent, "Share using");
@@ -411,10 +412,10 @@ public class Navigation_Activity extends AppCompatActivity
         } else if (id == R.id.nav_feedback) {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setData(Uri.parse("mailto:"));
-            String[] recipents = {"kvikesh800@gmail.com"};
+            String[] recipients = {"kimbrian400@gmail.com"};
             intent.setType("message/rfc822");
-            intent.putExtra(Intent.EXTRA_EMAIL, recipents);
-            intent.putExtra(Intent.EXTRA_SUBJECT, "QuizBook Reviews");
+            intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Trivia Reviews");
             Intent chooser = Intent.createChooser(intent, "Send Feedback Via");
             startActivity(chooser);
 

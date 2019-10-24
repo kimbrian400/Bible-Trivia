@@ -22,11 +22,11 @@ public class Result extends AppCompatActivity {
         attempt = intent.getIntExtra("attemp", 0);
         incorr = attempt - cor;
         scor = 10 * cor;
-        correct = (TextView) findViewById(R.id.correct);
-        incorrect = (TextView) findViewById(R.id.incorrect);
-        attempted = (TextView) findViewById(R.id.attempted);
-        score = (TextView) findViewById(R.id.score);
-        you = (TextView) findViewById(R.id.you);
+        correct = findViewById(R.id.correct);
+        incorrect = findViewById(R.id.incorrect);
+        attempted = findViewById(R.id.attempted);
+        score = findViewById(R.id.score);
+        you = findViewById(R.id.you);
 
         attempted.setText("  " + attempt);
         correct.setText("  " + cor);
@@ -34,7 +34,7 @@ public class Result extends AppCompatActivity {
         score.setText("Score  :    " + scor);
         float x1 = (cor * 100) / attempt;
         if (x1 < 40)
-            you.setText("You Need Improvement");
+            you.setText("You can do better");
         else if (x1 < 70)
             you.setText("You are an average Quizzer");
         else if (x1 < 90)

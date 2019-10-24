@@ -19,12 +19,12 @@ public class Setting_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final SharedPreferences sharedPreferences = getSharedPreferences("Score", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
-        final Button sound = (Button) findViewById(R.id.play_sound);
-        Button reset = (Button) findViewById(R.id.reset);
+        final Button sound = findViewById(R.id.play_sound);
+        Button reset = findViewById(R.id.reset);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (sharedPreferences.getInt("Sound", 0) == 0) {
             sound.setText("Mute Sound");

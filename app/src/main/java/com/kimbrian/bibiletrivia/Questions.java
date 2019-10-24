@@ -49,7 +49,7 @@ public class Questions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         SharedPreferences shared = getSharedPreferences("Score", Context.MODE_PRIVATE);
@@ -58,13 +58,15 @@ public class Questions extends AppCompatActivity {
         Intent intent = getIntent();//receiving the intent send by the Navigation activity
         get = intent.getStringExtra(Navigation_Activity.Message);//converting that intent message to string using the getStringExtra() method
         toast = new Toast(this);
+
         //attribute of the circular progress bar
-        donutProgress = (DonutProgress) findViewById(R.id.donut_progress);
+        donutProgress = findViewById(R.id.donut_progress);
         donutProgress.setMax(100);
         donutProgress.setFinishedStrokeColor(Color.parseColor("#FFFB385F"));
         donutProgress.setTextColor(Color.parseColor("#FFFB385F"));
         donutProgress.setKeepScreenOn(true);
         SharedPreferences sp = getSharedPreferences("Score", Context.MODE_PRIVATE);
+
         //To play background sound
         if (sp.getInt("Sound", 0) == 0) {
             mediaPlayer = MediaPlayer.create(this, R.raw.abc);
@@ -124,12 +126,12 @@ public class Questions extends AppCompatActivity {
         Sports.getWritableDatabase();
 
         //Till here we are linking the database file
-        OptA = (Button) findViewById(R.id.OptionA);
-        OptB = (Button) findViewById(R.id.OptionB);
-        OptC = (Button) findViewById(R.id.OptionC);
-        OptD = (Button) findViewById(R.id.OptionD);
-        ques = (TextView) findViewById(R.id.Questions);
-        play_button = (Button) findViewById(R.id.play_button);//Play button to start the game
+        OptA = findViewById(R.id.OptionA);
+        OptB = findViewById(R.id.OptionB);
+        OptC = findViewById(R.id.OptionC);
+        OptD = findViewById(R.id.OptionD);
+        ques = findViewById(R.id.Questions);
+        play_button = findViewById(R.id.play_button);//Play button to start the game
 
     }
 
@@ -160,7 +162,7 @@ public class Questions extends AppCompatActivity {
                 @Override
                 public void onFinish() {
                     toast.cancel();
-                    SharedPreferences.Editor editor = shared.edit();//here we are saving the data when the countdown timer will finish and it is saved in shared prefrence file that is defined in onCreate method as score
+                    SharedPreferences.Editor editor = shared.edit();//here we are saving the data when the countdown timer will finish and it is saved in shared preference file that is defined in onCreate method as score
                     editor.putInt("Questions", k).commit();
                     if (get.equals("c1") && shared.getInt("Computer", 0) < l)
                         editor.putInt("Computer", l * 10).apply();
@@ -197,7 +199,7 @@ public class Questions extends AppCompatActivity {
         if (global != null) {
             if (global.equals("A")) {
                 if (v.getId() == R.id.OptionA) {
-                    //Here we use the snackbar because if we use the toast then they will be stacked an user cannot idetify which questions answer is it showing
+                    //Here we use the snackbar because if we use the toast then they will be stacked an user cannot identify which questions answer is it showing
                     Snackbar.make(v, "         Correct ☺", Snackbar.LENGTH_SHORT).show();
 
                     l++;

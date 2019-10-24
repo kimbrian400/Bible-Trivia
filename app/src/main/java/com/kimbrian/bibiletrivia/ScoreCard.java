@@ -16,20 +16,21 @@ public class ScoreCard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_card);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         SharedPreferences sharedPreferences = getSharedPreferences("Score", Context.MODE_PRIVATE);
-        a1 = (TextView) findViewById(R.id.computer);
-        a2 = (TextView) findViewById(R.id.sports);
-        a3 = (TextView) findViewById(R.id.inventions);
-        a4 = (TextView) findViewById(R.id.general);
-        a5 = (TextView) findViewById(R.id.science);
-        a6 = (TextView) findViewById(R.id.english);
-        a7 = (TextView) findViewById(R.id.books);
-        a8 = (TextView) findViewById(R.id.maths);
-        a9 = (TextView) findViewById(R.id.capitals);
-        a10 = (TextView) findViewById(R.id.currency);
+        a1 = findViewById(R.id.computer);
+        a2 = findViewById(R.id.sports);
+        a3 = findViewById(R.id.inventions);
+        a4 = findViewById(R.id.general);
+        a5 = findViewById(R.id.science);
+        a6 = findViewById(R.id.english);
+        a7 = findViewById(R.id.books);
+        a8 = findViewById(R.id.maths);
+        a9 = findViewById(R.id.capitals);
+        a10 = findViewById(R.id.currency);
         try {
             a1.setText("" + sharedPreferences.getInt("Computer", 0));
             a2.setText("" + sharedPreferences.getInt("Sports", 0));

@@ -52,7 +52,7 @@ public class books extends SQLiteOpenHelper {
     private void createDB() {
 
         boolean dbexist = DBexists();//calling the function to check db exists or not
-        if (!dbexist)//if database doesnot exist
+        if (!dbexist)//if database does not exist
         {
 
             this.getReadableDatabase();//Create an empty file
@@ -73,9 +73,9 @@ public class books extends SQLiteOpenHelper {
             while ((length = is.read(buffer)) > 0) {
                 os.write(buffer, 0, length);//writing to file
             }
-            os.flush();//flush the outputstream
-            is.close();//close the inputstream
-            os.close();//close the outputstream
+            os.flush();//flush the output stream
+            is.close();//close the input stream
+            os.close();//close the output stream
 
         } catch (IOException e) {
             throw new Error("Problem copying database file:");
