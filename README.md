@@ -1,2 +1,2 @@
-# Bible-Trivia
-A Bible trivia game
+Trivia
+A simple trivia game
